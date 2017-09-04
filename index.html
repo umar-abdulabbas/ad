@@ -4,13 +4,105 @@
 
 <body>
 	
+<div  style="border:1px solid red"> Direct External Script 
 									
 <SCRIPT SRC="https://secure.adnxs.com/ttj?id=11486597&kw_lp-langue=fr" TYPE="text/javascript"></SCRIPT>
 <SCRIPT SRC="https://secure.adnxs.com/ttj?id=11486598&kw_lp-langue=fr" TYPE="text/javascript"></SCRIPT>
 <SCRIPT SRC="https://secure.adnxs.com/ttj?id=11486592&kw_lp-langue=fr" TYPE="text/javascript"></SCRIPT>
 
+</div>
 
-
-			
+<div style="border:1px solid green"> Document.write
+	<script>
+			console.log("2nd DIV");
+			var adlangForAF = "";       
+              	if(adlangForAF === 'fr'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486597&kw_lp-langue=fr.js"><\/script>');
+              	}
+              	else if(adlangForAF === 'en'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486597&kw_lp-langue=en.js"><\/script>');	
+              	}
+              	else{
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486597&kw_lp-langue=other.js"><\/script>');	
+              	}
+              
+	</script>
+	<script>
+			console.log("2nd DIV");
+			var adlangForAF = "";       
+              	if(adlangForAF === 'fr'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486598&kw_lp-langue=fr.js"><\/script>');
+              	}
+              	else if(adlangForAF === 'en'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486598&kw_lp-langue=en.js"><\/script>');	
+              	}
+              	else{
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486598&kw_lp-langue=other.js"><\/script>');	
+              	}
+              
+	</script>
+		<script>
+			console.log("2nd DIV");
+			var adlangForAF = "";       
+              	if(adlangForAF === 'fr'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486592&kw_lp-langue=fr.js"><\/script>');
+              	}
+              	else if(adlangForAF === 'en'){
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486592&kw_lp-langue=en.js"><\/script>');	
+              	}
+              	else{
+              		document.write('<script src="https://secure.adnxs.com/ttj?id=11486592&kw_lp-langue=other.js"><\/script>');	
+              	}
+              
+	</script>
+</div>
+<div  style="border:1px solid blue" id="last"> Asyn
+	<script>
+				
+				var head = document.getElementById('last');
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = 'https://secure.adnxs.com/ttj?id=11486597&kw_lp-langue=fr.js'
+				script.onload = function () {
+					console.log('The script is loaded');
+				}
+				script.text = ["console.log('This is from the script');",
+               "var script = document.getElementById('testing');",
+               "var event = new UIEvent('load');",
+               "script.dispatchEvent(event);"].join('');
+				head.appendChild(script);
+	</script>
+	
+		<script>
+				var head = document.getElementById('last');
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = 'https://secure.adnxs.com/ttj?id=11486598&kw_lp-langue=fr.js'
+				script.onload = function () {
+					console.log('The script is loaded');
+				}
+				script.text = ["console.log('This is from the script');",
+               "var script = document.getElementById('testing');",
+               "var event = new UIEvent('load');",
+               "script.dispatchEvent(event);"].join('');
+				head.appendChild(script);
+	</script>
+	
+	
+		<script>
+				var head = document.getElementById('last');
+				var script = document.createElement('script');
+				script.type = 'text/javascript';
+				script.src = 'https://secure.adnxs.com/ttj?id=11486592&kw_lp-langue=fr.js'
+				script.onload = function () {
+					console.log('The script is loaded');
+				}
+				script.text = ["console.log('This is from the script');",
+               "var script = document.getElementById('testing');",
+               "var event = new UIEvent('load');",
+               "script.dispatchEvent(event);"].join('');
+				head.appendChild(script);
+	</script>
+</div>			
 
 </body>
